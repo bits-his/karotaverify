@@ -169,7 +169,6 @@
                 try {
                     const response = await fetch(`https://galaxybis.ebudgetkano.ng/karota/vehicles?query_type=verify&plate_no=${plate_no}`);
                     const data = await response.json();
-        
                     if (data.success && data.data.length) {
                         const vehicle = data.data[0];
                         document.getElementById('pin').textContent = vehicle.pin ? vehicle.pin.toUpperCase() : 'N/A';
