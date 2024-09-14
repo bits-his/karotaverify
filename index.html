@@ -167,7 +167,7 @@
             async function fetchData() {
                 const plateNo = getPlateNumberFromURL(); 
                 try {
-                    const response = await fetch(`http://localhost:44405/vehicles?query_type=verify&plate_no=${plateNo}`);
+                    const response = await fetch(`https://galaxybis.ebudgetkano.ng/karota/vehicles?query_type=verify&plate_no=${plate_no}`);
                     const data = await response.json();
         
                     if (data.success && data.data.length) {
