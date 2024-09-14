@@ -159,10 +159,11 @@
         function goBack() {
             window.history.back();
         }
-            function getPlateNumberFromURL() {
-                const urlParams = new URLSearchParams(window.location.pathname.split('/').pop());
-                return urlParams.toString();
-            }
+ function getPlateNumberFromURL() {
+    const path = window.location.pathname;
+    return path.substring(path.lastIndexOf('/') + 1);
+}
+
         
             async function fetchData() {
                 const plateNo = getPlateNumberFromURL(); 
@@ -192,3 +193,15 @@
         </script>
 </body>
 </html>
+
+
+<!-- async function fetchData() {
+    const plateNo = data?.plate_no; // Ensure that plateNo is assigned properly
+    try {
+        const response = await fetch(`http://localhost:44405/vehicles?query_type=verify&plate_no=${plateNo}`);
+        const data = await response.json();
+        // handle response
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+} -->
